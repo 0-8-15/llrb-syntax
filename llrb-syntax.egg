@@ -1,0 +1,12 @@
+;; -*- mode: Scheme; -*-
+((category data)
+ (license "BSD")
+ (author "Jörg F. Wittenberger")
+ (synopsis "Expands LLRB code customized to data structures.")
+ (version "0.1")
+ ;;(doc-from-wiki)
+ (components
+  (extension
+   llrb-syntax
+   (types-file)
+   (csc-options "-O2"))))

@@ -1,0 +1,58 @@
+[[tags: egg]]
+== llrb-syntax
+
+A syntax-rules macro expanding into left-leaning red-black tree code.
+Pure and mutating versions.
+
+== Overview
+
+A left-leaning red–black (LLRB) tree is a type of self-balancing binary search tree.
+It is a variant of the red–black tree and guarantees the same asymptotic complexity for operations.
+[wikipedia].
+
+The macro is independent of data structures used to implement nodes of
+the trees.  Users must pass accessors and a syntax or procedure to
+update an existing node (for the mutating version) respectively create a fresh node
+as well as names for the procedures to be defined.
+
+== Examples
+
+See the llrb-tree egg.
+
+== API
+
+<syntax>define-llrbtree/positional
+(FEATURES)
+UPDATE
+init-root-node!		;; defined
+t-lookup		;; defined
+t-min			;; defined
+t-fold			;; defined
+t-for-each		;; defined
+t-insert		;; defined
+t-delete		;; defined
+t-delete-min		;; defined
+t-empty?		;; defined
+
+;; These syntax is used expand to code for comparision
+;; expressions.
+t-k-eq?			;; key<>node-key "equal"
+t-eq?			;; node-key<>node-key "equal"
+t-k-<?			;; key<>node-key "less then"
+t-<?			;; node<>node "less then"
+;; Accessors to the elements of the tree.
+left
+right
+color
+</syntax>
+
+FEATURES: {ordered, pure, leftmost} – configures the generated code.
+
+UPDATE
+
+The "update*" syntax must accept a node structure and
+key-value pairs.  Keys are color:, left: and right:
+
+"update" : If feature "pure" is set, "update" must expand
+to a newly allocated node, otherwise is MUST expand to a
+side effect full update of the original node.
