@@ -1,0 +1,10 @@
+;; -*-Scheme-*-
+
+(compile -s -O2 -d2 -J "llrb-syntax.scm")
+;; (compile -c "llrb-syntax.scm" -unit llrb-syntax)
+(compile -s -O2 -d0 "llrb-syntax.import.scm")
+
+(install-extension
+ 'llrb-syntax
+ '("llrb-syntax.so" "llrb-syntax.import.so")
+ '((version 0.2)))

@@ -1,0 +1,8 @@
+;; -*- mode: Scheme; -*-
+((category data)
+ (license "BSD")
+ (author "Jörg F. Wittenberger")
+ (synopsis "Expands LLRB code customized to data structures.  Pure and mutating versions.")
+ ;;(doc-from-wiki)
+ (needs)
+ (files "llrbsyn.scm" "llrb-syntax.scm" "llrb-syntax.setup" "llrb-syntax.meta"))

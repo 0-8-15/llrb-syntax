@@ -2,5 +2,7 @@
  llrb-syntax
  *
  (import scheme)
- (import (chicken base))
+ (cond-expand
+  (chicken-4 (import chicken))
+  (else (import (chicken base))))
  (include "llrbsyn.scm"))

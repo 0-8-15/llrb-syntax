@@ -3,7 +3,7 @@
  (license "BSD")
  (author "Jörg F. Wittenberger")
  (synopsis "Expands LLRB code customized to data structures.")
- (version "0.1")
+ (version "0.2")
  ;;(doc-from-wiki)
  (components
   (extension
